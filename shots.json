@@ -1,6 +1,27 @@
 [
-  { "file": "1-checklist.jpg", "path": "/", "note": "checklist with filters and the guide panel open, spoiler mode off" },
-  { "file": "2-guide-sources.jpg", "path": "/", "grade": "collectibles", "note": "a collectible trophy's guide, steps and cited sources" },
-  { "file": "3-roadmap.jpg", "path": "/roadmap", "note": "the six-stage roadmap to the platinum" },
-  { "file": "4-missables-spoiler.jpg", "path": "/", "note": "missables-only filter with the spoiler setting hiding story trophies" }
+  {
+    "file": "1-checklist.jpg",
+    "path": "/",
+    "view": "Checklist",
+    "note": "Checklist view with filters and the progress bar visible, spoiler mode off, and a trophy's official description, guide and cited sources open in the detail pane."
+  },
+  {
+    "file": "2-guide-sources.jpg",
+    "path": "/",
+    "grade": "collectibles",
+    "view": "Checklist — detail pane",
+    "note": "Checklist view focused on a collectible trophy: the original guide, its numbered steps and the source links are shown next to the trophy row."
+  },
+  {
+    "file": "3-roadmap.jpg",
+    "path": "/roadmap",
+    "view": "Roadmap",
+    "note": "Roadmap view listing all six stages with the reasoning for each, the ordered trophy links and checkmarks for entries already earned."
+  },
+  {
+    "file": "4-missables-spoiler.jpg",
+    "path": "/",
+    "view": "Checklist — missables filter",
+    "note": "Checklist view narrowed to missable trophies, with spoiler mode still on so unearned story and hidden entries are blurred rather than revealed."
+  }
 ]

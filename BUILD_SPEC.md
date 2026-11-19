@@ -89,3 +89,9 @@ tools, in your own words and structure — they must genuinely be your code.
 
 Do not push. Do not edit LICENSE, README.md, vendor/, serve.ts, or any file under
 `app/data/` other than copying the two files in step 5.
+
+## Verification log
+
+- `node --input-type=module --check < app/app.js` passed with no syntax errors.
+- Dev server smoke test on port 8093: `curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8093/` returned `200`, and `/data/trophies.json` served JSON.
+- `mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts` succeeded with four JPEG captures in `screenshots/`.
