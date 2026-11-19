@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leonida Legend — GTA VI Trophy Guide & Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 48 48" role="img" aria-label="Trophy">
+        <path d="M15 7h18v10c0 7-4 11-9 11s-9-4-9-11V7Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M15 10H9v5c0 4 2.5 6 6 6M33 10h6v5c0 4-2.5 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M24 28v8m-7 5h14l2-5H15l2 5Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M24 7v-3m-7 3h14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-copy">
+        <h1>Leonida Legend</h1>
+        <p class="subtitle">GTA VI · PlayStation 5 · 55 trophies</p>
+      </div>
+    </div>
+
+    <nav class="tabs" aria-label="Guide views">
+      <button type="button" class="tab is-active" data-view="checklist" aria-pressed="true">Checklist</button>
+      <button type="button" class="tab" data-view="roadmap" aria-pressed="false">Roadmap</button>
+      <button type="button" class="tab" data-view="missables" aria-pressed="false">Missables</button>
+    </nav>
+
+    <section class="progress-panel" aria-label="Trophy progress">
+      <div class="progress-meta">
+        <span id="progress-text">0 / 55 earned · 0%</span>
+        <span id="grade-counts"></span>
+      </div>
+      <div id="progress-track" class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="bar-fill" class="bar-fill"></span>
+      </div>
+    </section>
+  </header>
+
+  <section id="controls" aria-label="Filters and progress tools">
+    <label class="field search-field">
+      <span class="field-label">Search</span>
+      <input id="search" type="search" placeholder="Name, description or guide…" autocomplete="off">
+    </label>
+    <label class="field">
+      <span class="field-label">Grade</span>
+      <select id="grade-filter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="field">
+      <span class="field-label">Kind</span>
+      <select id="kind-filter">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="strangers">Strangers</option>
+        <option value="activities">Activities</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="money">Money</option>
+      </select>
+    </label>
+    <div class="check-group">
+      <label class="check"><input type="checkbox" id="missable-only"> Missable only</label>
+      <label class="check"><input type="checkbox" id="hide-done"> Hide earned</label>
+      <label class="check"><input type="checkbox" id="spoiler" checked> Spoiler mode</label>
+    </div>
+    <div class="tool-group">
+      <button type="button" id="export" class="tool-button">Export progress</button>
+      <label class="import-button" for="import">Import progress</label>
+      <input type="file" id="import" accept="application/json">
+      <button type="button" id="reset" class="tool-button danger">Reset</button>
+    </div>
+  </section>
+
+  <main id="main" class="split-view">
+    <section class="list-pane" aria-label="Trophy checklist">
+      <div class="pane-heading">
+        <h2>Checklist</h2>
+        <span id="result-count" class="muted"></span>
+      </div>
+      <ul id="trophy-list" class="trophy-list"></ul>
+    </section>
+    <aside class="detail-pane" aria-label="Trophy guide">
+      <div class="pane-heading"><h2>Guide</h2><span class="muted">Step-by-step</span></div>
+      <div id="detail-body" class="detail-body">
+        <p class="empty-detail">Select a trophy on the left to read its guide, steps and sources.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div id="roadmap-view" hidden>
+    <div class="section-intro">
+      <h2>Roadmap to the platinum</h2>
+      <p>Six stages, in the order that keeps story trophies, stranger chains and clean-up from overlapping. Tick trophies on the checklist as you go; a link opens its guide.</p>
+    </div>
+    <div id="roadmap-body" class="roadmap-body"></div>
+  </div>
+
+  <div id="missables-view" hidden>
+    <div class="section-intro">
+      <h2>Missable trophies</h2>
+      <p>These trophies need attention while a mission, strand or event window is still open. Save before the point of no return and clear them during the story.</p>
+    </div>
+    <div id="missables-body" class="missables-body"></div>
+  </div>
+
+  <footer class="site-footer">
+    Progress is saved in this browser only — no account, no network, no tracking. Export a backup before clearing your data.
+  </footer>
+
+  <noscript>
+    <p class="noscript-note">This tracker needs JavaScript to read its local trophy data and save your progress. Please enable JavaScript to use the checklist and guides.</p>
+  </noscript>
+</body>
+</html>
